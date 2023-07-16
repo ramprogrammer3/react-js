@@ -1,8 +1,11 @@
 import React from 'react'
 
-const Item = ({ name }) => {
+const Item = (props) => {
     return (
-        <div> {name} </div>
+        <div>
+            <div> {props.name}  </div>
+            {props.children}
+        </div>
     )
 }
 

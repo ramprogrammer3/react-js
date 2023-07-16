@@ -33,7 +33,9 @@ const App = () => {
       <h1>This is first react class </h1>
       <div className='white'>
 
-        <Item name={response[0].itemName} ></Item>
+        <Item name={response[0].itemName} >
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis quaerat neque facere laborum magni, dignissimos voluptas libero porro officia culpa excepturi fugit veniam ratione iste assumenda qui dolore rerum optio.</p>
+        </Item>
         <ItemDate day={response[0].itemDate} month={response[0].itemMonth} year={response[0].itemYear}></ItemDate>
 
 
