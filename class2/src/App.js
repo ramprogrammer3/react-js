@@ -25,10 +25,10 @@ const App = () => {
     },
 
   ]
- 
+
   return (
     <div className='app'>
-      <Products items = {products} />
+      <Products items={products} />
     </div>
   )
 }
