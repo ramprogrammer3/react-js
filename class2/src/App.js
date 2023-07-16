@@ -25,10 +25,10 @@ const App = () => {
     },
 
   ]
-  console.log(products)
+ 
   return (
     <div className='app'>
-      <Products />
+      <Products items = {products} />
     </div>
   )
 }

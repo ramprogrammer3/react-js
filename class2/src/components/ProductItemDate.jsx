@@ -1,11 +1,14 @@
 import React from 'react'
 
-const ProductItemDate = () => {
+const ProductItemDate = ({ date }) => {
+    const day = date.toLocaleString('en-US', { day: "2-digit" })
+    const month = date.toLocaleString('en-US', { month: "long" });
+    const year = date.getFullYear();
     return (
-        <div>
-            <div> Month </div>
-            <div>Year</div>
-            <div>Day</div>
+        <div className='date'>
+            <div> {month} </div>
+            <div> {year} </div>
+            <div> {day} </div>
         </div>
     )
 }
