@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+@media (max-width: 500px){
+    .none1{
+        display: none;
+    }
+
+    .center{
+        align-items: center;
+    }
+}
