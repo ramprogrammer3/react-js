@@ -1,33 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const App = () => {
 
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("")
+
   const firstNameHandler = (event) => {
-
-    console.log(event.target.value)
-
-    console.log(event.target)
-
+    setFirstName(event.target.value)
   }
 
   const lastNameHandler = (event) => {
-
-    console.log(event.target.value)
+    setLastName(event.target.value)
   }
+  console.log(firstName)
+  console.log(lastName)
 
   return (
     <div className='app'>
       <form action="">
-
-        <input type="text" name=""
-          id=""
-          placeholder='first name'
-          onChange={firstNameHandler}
-        />
-
+        <input type="text" placeholder='first name' onChange={firstNameHandler} value={firstName} />
         <br /><br />
-
-        <input type="text" placeholder='last name' onChange={lastNameHandler} />
+        <input type="text" value={lastName} placeholder='last name' onChange={lastNameHandler} />
 
 
       </form>
