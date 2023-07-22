@@ -13,7 +13,8 @@ const Form = () => {
         comment: false,
         candidate: false,
         offer: false,
-        notification: ""
+        notification: "",
+        phone: ""
     })
 
     const changeHandler = (events) => {
@@ -58,10 +59,20 @@ const Form = () => {
                 <label htmlFor="" className='font-medium'>Email address
                     <input type="email" className='border
                      border-blue-300 w-full p-2 mt-1 rounded-lg'
-                        placeholder='ram@gmail.com'
-
+                        placeholder='cool.dude.ramkumar@gmail.com'
                         name='email'
                         value={formData.email}
+                        onChange={changeHandler}
+
+                    />
+                </label>
+
+                <label htmlFor="" className='font-medium'>Phone
+                    <input type="number" className='border
+                     border-blue-300 w-full p-2 mt-1 rounded-lg'
+                        placeholder='7808720908'
+                        name='phone'
+                        value={formData.phone}
                         onChange={changeHandler}
 
                     />
