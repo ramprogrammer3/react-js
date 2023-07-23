@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
+import toast, { Toaster } from 'react-hot-toast';
 
 const Form = () => {
     const [formData, setFormData] = useState({
         firstName: "",
         lastName: "",
         email: "",
-        country: "",
+        country: "India",
         streetAddress: "",
         city: "",
         state: "",
@@ -22,7 +23,7 @@ const Form = () => {
         setFormData(prevFormData => {
             return {
                 ...prevFormData,
-                [name]: type === "checked" ? checked : value
+                [name]: type === "checkbox" ? checked : value
             }
         })
     }
@@ -39,42 +40,43 @@ const Form = () => {
                 <label htmlFor="" className='font-medium'>First name
                     <input type="text" className='border
                      border-blue-300 w-full p-2 mt-1 rounded-lg'
-                        placeholder='Ram'
+                        placeholder='pooja'
                         name='firstName'
                         value={formData.firstName}
                         onChange={changeHandler}
+                        required
                     />
                 </label>
 
                 <label htmlFor="" className='font-medium'>Last name
                     <input type="text" className='border
                      border-blue-300 w-full p-2 mt-1 rounded-lg'
-                        placeholder='Kumar'
+                        placeholder='abc'
                         name='lastName'
                         value={formData.lastName}
                         onChange={changeHandler}
+                        required
                     />
                 </label>
 
                 <label htmlFor="" className='font-medium'>Email address
                     <input type="email" className='border
                      border-blue-300 w-full p-2 mt-1 rounded-lg'
-                        placeholder='cool.dude.ramkumar@gmail.com'
+                        placeholder='abc@gmail.com'
                         name='email'
                         value={formData.email}
                         onChange={changeHandler}
-
                     />
                 </label>
 
                 <label htmlFor="" className='font-medium'>Phone
                     <input type="number" className='border
                      border-blue-300 w-full p-2 mt-1 rounded-lg'
-                        placeholder='7808720908'
+                        placeholder='0000007892'
                         name='phone'
                         value={formData.phone}
                         onChange={changeHandler}
-
+                        required
                     />
                 </label>
 
@@ -125,7 +127,7 @@ const Form = () => {
                 <label htmlFor="" className='font-medium'>ZIP / Postal code
                     <input type="text" className='border
                      border-blue-300 w-full p-2 mt-1 rounded-lg'
-                        placeholder='201304'
+                        placeholder='000000'
                         name="pin"
                         value={formData.pin}
                         onChange={changeHandler}
@@ -210,7 +212,11 @@ const Form = () => {
                     </div>
                 </div>
                 <button className='bg-blue-600 
-                text-white py-2 rounded-lg w-[80px] text-[18px]'> Save </button>
+                text-white py-2 rounded-lg w-[80px] text-[18px]'
+
+                    onClick={() => toast.success(`hi ${formData.firstName} ${formData.lastName}, your data saved , check in console`)}
+
+                > Save </button>
             </form>
         </div>
     )
