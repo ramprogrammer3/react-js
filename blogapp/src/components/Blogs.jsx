@@ -8,7 +8,7 @@ const Blogs = () => {
     const { loading, post } = useContext(AppContext)
 
     return (
-        <div>
+        <div className='my-20 w-10/12 max-w-[530px] py-2 flex flex-col gap-y-6 '>
 
             {
                 loading ?
@@ -21,13 +21,16 @@ const Blogs = () => {
                         </div>) : (
                             post.map((item) => (
                                 <div key={item.id}>
-                                    <p className="font-bold">{item.title} </p>
-                                    <p>By <span>{item.author} </span> on <span> {item.category} </span></p>
-                                    <p>Posted on {item.date} </p>
-                                    <p> {item.content} </p>
-                                    <div>
+                                    <p className="font-bold text-sm">{item.title} </p>
+                                    <p className='text-[10px] font-bold'>By <span className='italic'>{item.author} </span> on <span className='underline font-bold'> {item.category} </span></p>
+                                    <p className='text-[10px]'>Posted on {item.date} </p>
+                                    <p className='text-sm mt-5 mb-1'> {item.content} </p>
+                                    <div className='flex gap-x-2 flex-wrap'>
                                         {item.tags.map((tag, index) => {
-                                            return <span key={index}> {`#${tag}`} </span>
+                                            return <span key={index}
+                                                className='text-[10px] text-blue-500 underline 
+                                            font-bold'
+                                            > {`#${tag}`} </span>
                                         })}
                                     </div>
                                 </div>

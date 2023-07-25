@@ -30,3 +30,7 @@ body {
     transform: rotate(1turn)
   }
 }
+
+.border-bottom1{
+  border-bottom: 3px solid #ddd;
+}
