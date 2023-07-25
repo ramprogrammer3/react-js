@@ -8,7 +8,7 @@ const Blogs = () => {
     const { loading, post } = useContext(AppContext)
 
     return (
-        <div className='my-20 w-10/12 max-w-[530px] py-2 flex flex-col gap-y-6 '>
+        <div className='my-20 w-10/12 max-w-[530px] py-2 flex flex-col gap-y-6  '>
 
             {
                 loading ?
